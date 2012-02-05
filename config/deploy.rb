@@ -1,4 +1,4 @@
-set :application, "set your application name here"
+set :application, "chinese_thes"
 set :repository,  "git@github.com:skunath/Auto_Thes_Site.git"
 
 set :scm, :git
