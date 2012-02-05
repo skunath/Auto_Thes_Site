@@ -13,7 +13,9 @@
 
     <!-- Le styles -->
 	<%= stylesheet_link_tag    "bootstrap" %>
-	<%= stylesheet_link_tag    "bootstrap-responsive" %>
+	<%#= stylesheet_link_tag    "bootstrap-responsive" %>
+	<%#= stylesheet_link_tag    "docs" %>
+
 
   	<%= javascript_include_tag "application" %>
   	<%= csrf_meta_tags %>
@@ -32,7 +34,6 @@
   </head>
 
   <body>
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -44,8 +45,14 @@
           <a class="brand" href="#">Auto Thesaurus (China-saurus)</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+			  <li class="active"><a href="#">Home</a></li>
+              <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Base Dictionary <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><%= link_to "Base Translate", {:action => "translate", :controller => "home"}%></li>
+		        </ul>
+		      </li>
+			  <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
             <p class="navbar-text pull-right">Logged in as <a href="#">An English Speaker</a></p>
@@ -60,6 +67,24 @@
 
     </div><!--/.fluid-container-->
     
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<%= javascript_include_tag "bootstrap-transition" %>
+	<%= javascript_include_tag "bootstrap-alert" %>
+
+	<%= javascript_include_tag "bootstrap-modal" %>
+	<%= javascript_include_tag "bootstrap-dropdown" %>
+	<%#= javascript_include_tag "bootstrap-scrollspy" %>
+	<%= javascript_include_tag "bootstrap-tab" %>
+	<%= javascript_include_tag "bootstrap-tooltip" %>
+	<%= javascript_include_tag "bootstrap-popover" %>
+	<%= javascript_include_tag "bootstrap-button" %>
+	<%= javascript_include_tag "bootstrap-collapse" %>
+	<%= javascript_include_tag "bootstrap-carousel" %>
+	<%= javascript_include_tag "bootstrap-typeahead" %>
+
+
 
   </body>
 </html>

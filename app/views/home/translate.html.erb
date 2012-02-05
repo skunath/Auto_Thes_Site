@@ -1,0 +1,27 @@
+<div class="page-header">
+    <h1>Base Thesaurus <small>English Access</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+Enter Phrase
+    </div><!--/span-->
+    <div class="span12">
+	<%= form_tag "/home/process_translate", :method => :get, :remote => true do |f| -%> 
+	<%= text_field_tag :search, params[:search] %> <%= submit_tag "Search" %> 
+
+	<% end -%>
+
+
+
+   </div><!--/span-->
+  </div><!--/row-->
+  <div class="row">
+    <div class="span4">
+Result
+    </div><!--/span-->
+    <div class="span12">
+		<div id="thesaurus_result">
+
+		</div>
+   </div><!--/span-->
+  </div><!--/row-->

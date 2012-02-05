@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+<% for word in @result%>
+	<tr>
+	<% if word.is_a?(String)%>
+		<td colspan="4"><%= word %></td>
+	<% else %>
+	
+		<td><%= word.traditional%></td>
+		<td><%= word.simplified%></td>
+		<td><%= word.pinyin%></td>
+		<td><%= word.definition%></td>
+	
+	
+	<% end %>
+	</tr>
+<% end %>
+</table>
